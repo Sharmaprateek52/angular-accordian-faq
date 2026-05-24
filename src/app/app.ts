@@ -1,4 +1,4 @@
-import { Component, signal, computed } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +9,7 @@ import { Component, signal, computed } from '@angular/core';
       <div class="accordian-grid">
         @for (data of accordians; track $index) {
           <button class="accordion" (click)="toggleAccordion($index)">{{ data.title }}</button>
-          @if (expandedIndex() == $index) {
+          @if (expandedIndex() === $index) {
             <div class="panel">
               <p>{{ data.description }}</p>
             </div>
